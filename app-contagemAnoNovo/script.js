@@ -1,3 +1,5 @@
+//Variáveis
+
 const daysEl = document.getElementById("days");
 const hoursEl = document.getElementById("hours");
 const minsEl = document.getElementById("mins");
@@ -29,7 +31,7 @@ function countdown() {
 
 
 
-// Iniciando contagem
+// Chamando a função
 countdown();
 
 setInterval(countdown, 1000);

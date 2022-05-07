@@ -1,8 +1,11 @@
-const APIURL = "https://api.github.com/users/";
+//Variáveis
 
+const APIURL = "https://api.github.com/users/";
 const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
+
+// Função para pegar o username
 
 async function getUser(username) {
     const resp = await fetch(APIURL + username);
@@ -13,12 +16,16 @@ async function getUser(username) {
     getRepos(username);
 }
 
+// Função para pegar os repositórios do username pesquisado
+
 async function getRepos(username) {
     const resp = await fetch(APIURL + username + '/repos');
     const respData = await resp.json();
 
     addReposToCard(respData);
 }
+
+// Adicionando as informações no HTML e criando a div aonde iremos adicionar os repositórios
 
 function createUserCard(user) {
     const cardHTML = `
@@ -43,6 +50,8 @@ function createUserCard(user) {
     main.innerHTML = cardHTML;
 }
 
+// Adicionando os repositórios a div criada na função anterior
+
 function addReposToCard(repos) {
     const reposEl = document.getElementById('repos');
 
@@ -58,6 +67,8 @@ function addReposToCard(repos) {
         reposEl.appendChild(repoEl);
     });
 }
+
+// Feature de pesquisa
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
