@@ -1,3 +1,5 @@
+        // Variavel com as perguntas do quiz
+
 const quizData = [
     {
         question: "Qual a data de nascimento do criador do quiz?",
@@ -38,6 +40,8 @@ const quizData = [
 
 ];
 
+    // outras váriaveis
+
 const questionEl = document.getElementById("question");
 const quiz = document.getElementById("quiz")
 const a_text = document.getElementById("a_text"); 
@@ -50,6 +54,8 @@ const submitBtn = document.getElementById("submit-btn")
 let currentQuiz = 0;
 let score = 0;
 
+
+    //iniciando o quiz
 loadQuiz();
 
 function loadQuiz() {
@@ -77,9 +83,11 @@ function getSelected() {
 }
 
 submitBtn.addEventListener('click', () => {
+
     // checar pra ver se tem resposta
     const answer = getSelected();
-    console.log(answer)
+
+    //Adicionando score se a resposta estiver correta
 
     if(answer) {
         if(answer == quizData[currentQuiz].correct) {
@@ -99,3 +107,5 @@ submitBtn.addEventListener('click', () => {
     }
 
 });
+
+        //A data de nascimento do criador é 21/03/2002 caso não tenha encontrado em nenhum outro lugar xD

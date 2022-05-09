@@ -1,4 +1,4 @@
-// Variáveis
+    // Variáveis
 
 const form = document.getElementById("form");
 const input = document.getElementById("input");
@@ -17,12 +17,16 @@ form.addEventListener("submit", (e) => {
     addTodo();
 });
 
+    //Função pra add tarefa
+
 function addTodo(todo) {
     let todoText = input.value;
 
     if (todo) {
         todoText = todo.text;
     }
+
+    //Criando lista e adicionando no HTML da página
 
     if (todoText) {
         const todoEl = document.createElement("li");
@@ -53,6 +57,8 @@ function addTodo(todo) {
         updateLS();
     }
 }
+
+    //Armazenando as tarefas
 
 function updateLS() {
     const todosEl = document.querySelectorAll("li");
